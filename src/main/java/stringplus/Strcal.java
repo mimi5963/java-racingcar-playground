@@ -20,7 +20,7 @@ public class Strcal {
 
         int result;
         List<Integer> intList = getIntList(s);
-        result = intList.stream().reduce(0,Integer::sum).intValue();
+        result = intList.stream().reduce(0,(a,b) ->a+b).intValue();
 
         return result;
     }
