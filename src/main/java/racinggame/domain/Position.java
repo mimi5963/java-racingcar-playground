@@ -32,4 +32,16 @@ public class Position {
         pos =pos+1;
         return this;
     }
+
+    public int getPos() {
+        return pos;
+    }
+
+    public boolean isSame(int maxPos) {
+        return pos == maxPos;
+    }
+
+    public boolean lessThan(Position maxPos) {
+        return false;
+    }
 }
