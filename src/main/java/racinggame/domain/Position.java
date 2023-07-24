@@ -4,14 +4,14 @@ import java.util.Objects;
 
 public class Position {
 
-    private int pos;
+    private int posInt;
 
     public Position(){
         this(0);
     }
     public Position(int pos) {
         if(pos <0) throw new IllegalArgumentException("음수가 될 수 없슈");
-        this.pos = pos;
+        this.posInt = pos;
     }
 
     @Override
@@ -19,29 +19,30 @@ public class Position {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Position position = (Position) o;
-        return pos == position.pos;
+        return posInt == position.posInt;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pos);
+        return Objects.hash(posInt);
     }
 
 
     public Position move() {
-        pos =pos+1;
+        posInt = posInt +1;
         return this;
     }
 
     public int getPos() {
-        return pos;
+        return posInt;
     }
 
     public boolean isSame(int maxPos) {
-        return pos == maxPos;
+        return posInt == maxPos;
     }
 
-    public boolean lessThan(Position maxPos) {
-        return false;
+    public boolean lessThan(Position maxPos) { //이거 쫌 팁이넹..ㅋㅎ
+
+        return  maxPos.posInt > this.posInt;
     }
 }
